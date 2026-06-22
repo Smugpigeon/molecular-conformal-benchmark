@@ -1,0 +1,22 @@
+# GSHt — cysteine-targeted covalent reactivity to glutathione, regression, 419 molecules.
+# Source: Zhang et al. JCIM 2025 (https://pubs.acs.org/doi/10.1021/acs.jcim.4c01591).
+# Current SOTA Pearson R ~ 0.80 (FP-Stack, Zhang 2025).
+#
+# This is the JCIM main-line dataset for this project. See 项目调研汇总.md §5.
+
+name: gsht
+description: "Chemical reactivity of cysteine-targeted covalent compounds toward GSH"
+task: regression
+metric_main: PearsonR  # Zhang 2025 reports Pearson R as primary metric
+citation:
+  doi: "10.1021/acs.jcim.4c01591"
+  bibkey: "zhang2025covalent"
+notes:
+  label_range: [0.11, 4.33]
+  n_train: 301
+  n_val: 34
+  n_test: 84
+  caveat: |
+    Small dataset; expect noisy metrics. Always run 3-seed (42/1337/2024) ×
+    5-fold CV per CLAUDE.md §8.2-8.3. Use Boltz-2 / AlphaFold3 co-fold
+    features as differentiator (see 项目调研汇总.md §4.4).

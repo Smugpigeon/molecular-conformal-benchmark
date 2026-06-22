@@ -1,0 +1,14 @@
+# Uni-Mol Tools (DeepModeling). SE(3)-Transformer on 3D conformers.
+# pip install unimol-tools
+# Reference: https://github.com/deepmodeling/Uni-Mol
+# CLAUDE.md §8.8: must run fp32, NOT fp16.
+
+name: unimol
+data_type: molecule
+conf_size: 10
+epochs: 50
+batch_size: 16
+lr: 1.0e-4
+early_stopping: 10
+precision: fp32
+unimol_metric: default

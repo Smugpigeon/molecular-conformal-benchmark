@@ -1,0 +1,18 @@
+# BBBP — blood-brain barrier penetration, binary classification, 2050 molecules.
+# Source: Martins 2012; MoleculeNet benchmark.
+# SOTA ROC-AUC 0.962 (HimNet, arxiv 2504.20127).
+
+name: bbbp
+description: "Blood-brain barrier penetration (binary)"
+task: classification
+metric_main: ROC-AUC
+notes:
+  positive_rate: 0.76
+  n_train: 1435
+  n_val: 205
+  n_test: 410
+  caveat: |
+    Per CLAUDE.md §11: 76% positive class. Mandatory:
+      - class_weight='balanced' for sklearn models
+      - report PR-AUC alongside ROC-AUC
+      - consider stratified CV not random

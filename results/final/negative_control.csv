@@ -1,0 +1,4 @@
+model,real_R,shuffled_R,pass
+RF (morgan),0.8404,-0.1078,True
+GBM (morgan),0.8443,-0.0367,True
+TabPFN (desc),0.8726,-0.0535,True

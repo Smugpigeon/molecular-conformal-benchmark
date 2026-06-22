@@ -1,0 +1,15 @@
+# BACE binarized: active if pIC50 >= 7.
+# This boundary reproduces the official DeepChem bace.csv `Class` column
+# (inactive upper bound pIC50 = 6.983), so results are comparable to
+# published BACE-classification SOTA (ROC-AUC 0.89-0.93).
+# 项目调研汇总.md v2 §2.
+
+name: bace_cls
+description: "beta-secretase 1 inhibition (binary: active pIC50 >= 7 = IC50 <= 100 nM)"
+task: classification
+metric_main: ROC-AUC
+notes:
+  threshold: "pIC50 >= 7 (IC50 <= 100 nM)"
+  threshold_source: "matches DeepChem official Class boundary (6.983)"
+  pos_pct: 44.5
+  comparable_sota: "published BACE classification ROC-AUC 0.89-0.93"

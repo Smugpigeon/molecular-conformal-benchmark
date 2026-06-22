@@ -1,0 +1,2 @@
+pdb,ligand,chain,n_atoms,vina_score,rmsd_inplace_A,rmsd_aligned_A,verdict
+4D8C,BXD,A,40,-9.979,0.915,0.839,PASS(<2.0A)

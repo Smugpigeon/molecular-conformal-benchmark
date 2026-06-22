@@ -1,0 +1,13 @@
+# ESOL binarized: soluble if logS > -4 (SwissADME qualitative scale).
+# Built by `python -m src.data.binarize`. Expect ~69% positive (imbalanced).
+# 项目调研汇总.md v2 §2.
+
+name: esol_cls
+description: "Aqueous solubility (binary: soluble logS > -4, SwissADME scale)"
+task: classification
+metric_main: ROC-AUC
+notes:
+  threshold: "logS > -4"
+  threshold_source: "SwissADME qualitative scale (NOT Delaney 2004, which is regression-only)"
+  pos_pct: 69.4
+  caveat: "Imbalanced; report PR-AUC + MCC alongside ROC-AUC (CLAUDE.md §9)"

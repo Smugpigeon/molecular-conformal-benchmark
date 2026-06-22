@@ -1,0 +1,16 @@
+# BBBP cleaned: original BBB+/- labels, but deduped + RDKit-validated +
+# label-conflict rows dropped (Martins 2012 source has mixture SMILES,
+# duplicate molecules with conflicting labels, RDKit-unparseable entries).
+# Built by `python -m src.data.binarize`.
+# 项目调研汇总.md v2 §2.
+
+name: bbbp_cls
+description: "Blood-brain barrier penetration (binary, cleaned)"
+task: classification
+metric_main: ROC-AUC
+notes:
+  cleaning: "canonicalize + drop RDKit failures + drop label-conflict dups + dedup"
+  pos_pct_raw: 76.4
+  caveat: |
+    Training set ~76% positive vs real-world small-molecule prior ~98% negative.
+    Use as the distribution-shift + calibration showcase (temperature scaling).

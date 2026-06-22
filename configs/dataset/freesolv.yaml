@@ -1,0 +1,14 @@
+# FreeSolv — hydration free energy, regression, 642 molecules.
+# Source: Mobley & Guthrie 2014; MoleculeNet benchmark.
+# SOTA RMSE 1.075 (ChemFM-3B, arxiv 2410.21422).
+
+name: freesolv
+description: "Hydration free energy in water (Mobley 2014)"
+task: regression
+metric_main: RMSE
+notes:
+  label_range: [-25.5, 3.4]
+  n_train: 449
+  n_val: 64
+  n_test: 129
+  caveat: "Many outliers; smallest dataset. Be careful with leave-one-out style metrics."

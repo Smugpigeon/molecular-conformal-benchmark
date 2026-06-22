@@ -1,0 +1,93 @@
+# Per CLAUDE.md §10
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+build/
+dist/
+.eggs/
+pip-wheel-metadata/
+
+# ---- Virtual envs ----
+venv/
+.venv/
+env/
+ENV/
+
+# ---- Experiment outputs (regeneratable, large) ----
+runs/
+wandb/
+lightning_logs/
+outputs/       # hydra default
+multirun/      # hydra multirun
+*.pt
+*.ckpt
+*.pkl
+*.joblib
+*.safetensors
+
+# ---- Processed data (regeneratable from data/raw via make data) ----
+# NOTE: data/ raw CSVs are kept under version control (small).
+# Only processed/cached files are ignored.
+data/processed/
+data/cache/
+data/canonical/
+**/*.tmp.csv
+
+# ---- HuggingFace cache ----
+.cache/
+.huggingface/
+
+# ---- IDE ----
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# ---- Secrets (CLAUDE.md §10: never commit) ----
+.env
+.env.local
+*.key
+secrets.yaml
+configs/secrets/
+
+# ---- Notebooks ----
+.ipynb_checkpoints/
+notebooks/scratch_*.ipynb
+
+# ---- Coverage / type checker ----
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ---- Paper build artifacts ----
+*.aux
+*.log
+*.out
+*.bbl
+*.blg
+*.synctex.gz
+paper/_minted-*/
+
+# ---- OS ----
+Thumbs.db
+*.DS_Store
+
+# ---- internal dev docs (not for public release; contain server SSH line) ----
+CLAUDE.md
+AGENTS.md
+项目调研汇总.md
+
+# ---- superseded/internal artifacts (not for public release) ----
+scripts/legacy/
+results/legacy/
+paper/legacy/
+report/_backup_pptx/

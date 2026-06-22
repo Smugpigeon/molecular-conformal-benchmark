@@ -1,0 +1,8 @@
+metric,statistic,value,p_value,n
+pIC50_vs_vina_raw,pearson,-0.336433,0.069091,30
+pIC50_vs_vina_raw,spearman,-0.235595,0.210094,30
+pIC50_vs_vina_partial_ctrl_heavy,pearson_partial,-0.293864,0.121794,30
+pIC50_vs_LE_per_heavy,pearson,0.103778,0.585245,30
+pIC50_vs_LE_per_heavy,spearman,0.082981,0.662875,30
+pIC50_vs_vina_per_mw,pearson,-0.023792,0.900684,30
+pIC50_vs_vina_per_mw,spearman,-0.013571,0.943259,30

@@ -1,0 +1,2 @@
+N_folds,friedman_p,iman_davenport_p,avgrank_Ridge,avgrank_SVR,avgrank_GBM,avgrank_RF,avgrank_TabPFN,avgrank_MolFormer,avgrank_ChemFM,avgrank_Chemprop
+50,8.25583346576635e-38,3.545800445125459e-55,5.36,5.32,3.88,2.92,1.6,7.6,5.2,4.12

@@ -1,0 +1,30 @@
+# Main Hydra config. Compose dataset + model + paths.
+# Override on CLI: python -m src.train dataset=bbbp model=rf seed=1337
+
+defaults:
+  - paths: default
+  - dataset: gsht       # default to the JCIM main-line dataset
+  - model: rf           # default to baseline
+  - _self_
+
+# CLAUDE.md §8.2: run with 3 seeds (42, 1337, 2024) and report mean±std.
+seed: 42
+
+# CLAUDE.md §8.1: True for paper-grade runs; flip to False only during exploration.
+deterministic: true
+
+# §16.4 one-time final test evaluation. Off by default; turned on only for the
+# conformal/cliff studies that legitimately need held-out test predictions.
+save_test_preds: false
+
+log_level: INFO
+
+# Hydra run/output directory.
+hydra:
+  run:
+    dir: ${paths.runs}/${now:%Y-%m-%d}_${now:%H-%M-%S}_${dataset.name}_${model.name}_seed${seed}
+  sweep:
+    dir: ${paths.runs}/multirun/${now:%Y-%m-%d}_${now:%H-%M-%S}
+    subdir: ${dataset.name}_${model.name}_seed${seed}
+  job:
+    chdir: false

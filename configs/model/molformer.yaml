@@ -1,0 +1,17 @@
+# MolFormer-XL (IBM, Nat Mach Intell 2022). 47M-parameter Transformer.
+# HF: ibm-research/MoLFormer-XL-both-10pct
+# Pretrained on 1.1B PubChem + ZINC SMILES.
+# Per CLAUDE.md §4: full fine-tune fits in <16GB VRAM, no LoRA needed.
+
+name: molformer
+backbone_id: "ibm-research/MoLFormer-XL-both-10pct"
+max_seq_length: 128
+batch_size: 32
+epochs: 30
+lr: 1.0e-4
+weight_decay: 0.01
+warmup_ratio: 0.1
+num_workers: 2
+freeze_backbone: false
+peft:
+  enabled: false

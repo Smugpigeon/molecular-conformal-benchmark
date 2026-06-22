@@ -1,0 +1,14 @@
+# Chemprop v2 (D-MPNN) — 策略2 (SMILES -> 2D graph -> GNN).
+# Reference: https://github.com/chemprop/chemprop
+# Wrapper: src/models/chemprop_wrapper.py (chemprop v2 Python API).
+
+name: chemprop
+depth: 3
+hidden_dim: 300
+ffn_hidden_dim: 300
+ffn_num_layers: 2
+dropout: 0.0
+epochs: 50
+batch_size: 64
+num_workers: 0
+use_gpu: true

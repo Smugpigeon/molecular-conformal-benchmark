@@ -1,0 +1,10 @@
+model,family,rep,n_seed,val_MAE,val_RMSE,val_PearsonR,val_SpearmanRho,test_MAE,test_RMSE,test_PearsonR,test_SpearmanRho,val_MAE_std,val_RMSE_std,val_PearsonR_std,val_SpearmanRho_std,test_MAE_std,test_RMSE_std,test_PearsonR_std,test_SpearmanRho_std
+Ridge,classic,Morgan-2048,1,0.6521,0.8403,0.8007,0.7509,0.5955,0.7956,0.8136,0.8021,,,,,,,,
+SVR,classic,Morgan-2048,1,0.6862,0.8835,0.7771,0.7422,0.599,0.793,0.8147,0.7965,,,,,,,,
+GBM,classic,Morgan-2048,1,0.6139,0.7549,0.8462,0.7832,0.5685,0.7534,0.8348,0.8131,,,,,,,,
+RF,classic,Morgan-2048,1,0.6348,0.8084,0.8239,0.7719,0.5543,0.7466,0.841,0.8223,,,,,,,,
+TabPFN (desc),tabpfn,desc,1,0.5802,0.7579,0.8419,0.8029,0.4982,0.6679,0.8726,0.8342,,,,,,,,
+TabPFN (FP512),tabpfn,morgan512,1,0.5923,0.766,0.8411,0.7917,0.5297,0.6951,0.8639,0.84,,,,,,,,
+MolFormer-XL,deep,SMILES/graph,3,0.6916,0.8775,0.7881,0.7424,0.6735,0.8853,0.7749,0.7331,0.0719,0.0795,0.055,0.0632,0.054,0.0566,0.0353,0.0339
+ChemFM-3B,deep,SMILES/graph,3,0.6535,0.8338,0.8056,0.7801,0.5594,0.7622,0.8305,0.8161,0.0258,0.0398,0.0203,0.0165,0.0222,0.0205,0.0093,0.0066
+Chemprop,deep,SMILES/graph,3,0.6017,0.7865,0.8354,0.7846,0.5508,0.7366,0.8419,0.8267,0.0202,0.0235,0.0111,0.0217,0.0084,0.0149,0.0067,0.0085

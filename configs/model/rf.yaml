@@ -1,0 +1,10 @@
+# Random Forest baseline + Morgan FP (radius=2, fpSize=2048 fixed per CLAUDE.md §9).
+# This is the floor every other model must beat.
+
+name: rf
+n_estimators: 500
+max_depth: null   # unlimited
+featurizer:
+  name: morgan
+  radius: 2
+  n_bits: 2048

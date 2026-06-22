@@ -1,0 +1,20 @@
+# ChemFM (LuoFengLab, 2024-25). Decoder-only Llama 1B/3B trained on 178M molecules.
+# HF: ChemFM/ChemFM-3B (or ChemFM-1B for tight VRAM).
+# Per 项目调研汇总.md §4.1: current SMILES-class SOTA on ESOL/FreeSolv/BBBP/BACE.
+# Per CLAUDE.md §8.9: LoRA mandatory (full FT 3B = 24GB+ optim states).
+
+name: chemfm
+backbone_id: "ChemFM/ChemFM-3B"   # swap to ChemFM-1B if OOM
+max_seq_length: 256
+batch_size: 4
+gradient_accumulation_steps: 4   # effective batch = 16
+epochs: 10
+lr: 5.0e-5
+weight_decay: 0.01
+warmup_ratio: 0.1
+num_workers: 2
+peft:
+  r: 16
+  alpha: 32
+  dropout: 0.05
+  target_modules: ["q_proj", "v_proj"]

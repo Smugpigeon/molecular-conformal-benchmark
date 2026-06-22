@@ -1,0 +1,8 @@
+# All paths live here. Per CLAUDE.md §6 anti-pattern: do NOT hard-code paths
+# in scripts. Override on CLI: paths.data=/data/eric/...
+
+root: ${oc.env:PROJECT_ROOT,${hydra:runtime.cwd}}
+data: ${paths.root}/data
+processed: ${paths.root}/data/processed
+runs: ${paths.root}/runs
+results: ${paths.root}/results

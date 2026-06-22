@@ -1,0 +1,17 @@
+# BACE — beta-secretase 1 pIC50, regression (also commonly used as classification).
+# Source: Subramanian 2016; MoleculeNet benchmark.
+# SOTA (as classification) ROC-AUC 0.896 (FARM, arxiv 2410.02082).
+
+name: bace
+description: "IC50 against human beta-secretase 1 (Alzheimer's target)"
+task: regression
+metric_main: RMSE
+notes:
+  label_range: [2.54, 10.5]
+  n_train: 1059
+  n_val: 151
+  n_test: 303
+  caveat: |
+    Per CLAUDE.md §11: 71% of BACE molecules have undefined stereo centers
+    (per arxiv 2604.16586 survey). Stereo-aware models may show inflated
+    performance. Report stereo-undefined fraction in discussion.

@@ -1,0 +1,5 @@
+dataset,model,coverage_mcdropout,width_mcdropout,coverage_conformal,width_conformal,n_passes
+esol,molformer,0.282,1.079,0.921,5.146,30
+freesolv,molformer,0.62,1.228,0.961,4.878,30
+lipophilicity,molformer,0.392,0.488,0.919,1.906,30
+bace,molformer,0.531,1.098,0.917,2.721,30

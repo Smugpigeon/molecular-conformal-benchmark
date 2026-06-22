@@ -1,0 +1,16 @@
+# ESOL — water solubility, regression, 1128 molecules.
+# Source: Delaney 2004; MoleculeNet benchmark.
+# SOTA RMSE 0.439 (ChemFM-3B, arxiv 2410.21422).
+
+name: esol
+description: "Water solubility logS (Delaney 2004)"
+task: regression
+metric_main: RMSE
+# Domain caveat (CLAUDE.md §11): ESOL spans 13 log units, far exceeding the
+# 2-3 log range that matters pharmaceutically. Report normalized RMSE in
+# discussion.
+notes:
+  label_range: [-11.6, 1.58]
+  n_train: 789
+  n_val: 112
+  n_test: 227

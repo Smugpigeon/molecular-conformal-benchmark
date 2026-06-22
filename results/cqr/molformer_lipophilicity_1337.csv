@@ -1,0 +1,2 @@
+coverage,width,q,alpha,target_coverage,dataset,model,seed
+0.9238095238095239,2.1526339323493855,0.4933323405386614,0.1,0.9,lipophilicity,molformer,1337

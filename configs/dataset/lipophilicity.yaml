@@ -1,0 +1,14 @@
+# Lipophilicity — logD@pH 7.4, regression, 4200 molecules.
+# Source: ChEMBL; MoleculeNet benchmark.
+# SOTA RMSE 0.501 (MSHG-MAE, 2025).
+
+name: lipophilicity
+description: "Octanol/water distribution coefficient logD at pH 7.4 (ChEMBL)"
+task: regression
+metric_main: RMSE
+notes:
+  label_range: [-1.5, 4.5]
+  n_train: 2940
+  n_val: 420
+  n_test: 840
+  caveat: "Largest dataset; deep models can shine here."

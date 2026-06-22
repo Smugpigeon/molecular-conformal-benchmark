@@ -1,0 +1,5 @@
+method,nominal,coverage,mean_width
+TabPFN native,0.9,0.891,2.1
+TabPFN split-conformal,0.9,0.947,2.504
+TabPFN CQR,0.9,0.934,2.306
+RF split-conformal,0.9,0.917,2.635

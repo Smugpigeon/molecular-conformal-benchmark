@@ -1,0 +1,94 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fudan-aidd"
+version = "0.1.0"
+description = "MoleculeNet benchmark + GSHt covalent reactivity prediction (Fudan AIDD course / JCIM submission)"
+requires-python = ">=3.10"
+authors = [{ name = "Eric Tom", email = "ericktom94720@gmail.com" }]
+license = { text = "MIT" }
+readme = "README.md"
+keywords = ["cheminformatics", "drug-discovery", "MoleculeNet", "covalent-reactivity", "ADMET"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Chemistry",
+]
+dependencies = []  # see env.yml; intentionally empty so pip install -e . is fast
+
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.6",
+    "mypy>=1.11",
+    "pytest>=8.0",
+    "pytest-cov>=5.0",
+    "pre-commit>=3.8",
+]
+
+[project.urls]
+Repository = "https://github.com/USER/fudan-aidd"
+Issues = "https://github.com/USER/fudan-aidd/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
+
+# -----------------------------------------------------------------------------
+# Ruff (lint + format). Per CLAUDE.md §6: line 100, double quotes, future annotations.
+# -----------------------------------------------------------------------------
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+extend-exclude = ["notebooks", "runs", "wandb", "data", "paper"]
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "F",   # pyflakes
+    "W",   # pycodestyle warnings
+    "I",   # isort
+    "UP",  # pyupgrade
+    "B",   # bugbear
+    "SIM", # simplify
+    "RUF", # ruff-specific
+    "RUF001", "RUF002", "RUF003",  # CLAUDE.md §6: ban Unicode smart quotes / em-dash in code
+]
+ignore = ["E501"]  # line length handled by formatter
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["B011"]  # asserts allowed in tests
+"scripts/*" = ["E402"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+# -----------------------------------------------------------------------------
+# Mypy (gradual typing). CLAUDE.md §6: public API requires type hints.
+# -----------------------------------------------------------------------------
+[tool.mypy]
+python_version = "3.11"
+strict_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_return_any = true
+disallow_untyped_defs = false  # gradual; flip to true once project matures
+ignore_missing_imports = true  # rdkit/chemprop/unimol have no stubs
+
+# -----------------------------------------------------------------------------
+# Pytest
+# -----------------------------------------------------------------------------
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --strict-markers --tb=short"
+filterwarnings = [
+    "ignore::DeprecationWarning:rdkit.*",
+]
+markers = [
+    "slow: tests that take > 5s",
+    "gpu: tests requiring CUDA",
+]

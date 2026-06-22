@@ -1,0 +1,10 @@
+dataset,model,uq_method,coverage,width,conformal_coverage,conformal_width
+esol,rf,tree-ensemble-Gaussian,0.85,3.7,0.9030837004405288,4.660905333333332
+freesolv,rf,tree-ensemble-Gaussian,0.899,4.907,0.8914728682170543,5.609559999999989
+lipophilicity,rf,tree-ensemble-Gaussian,0.902,2.661,0.911904761904762,2.8398809523809523
+bace,rf,tree-ensemble-Gaussian,0.881,2.264,0.9306930693069309,2.8474968957333293
+qm7,rf,tree-ensemble-Gaussian,0.804,420.812,0.912280701754386,545.7725600000094
+qm8,rf,tree-ensemble-Gaussian,0.902,0.031,0.8806244260789715,0.0313450120399997
+bace_clean,molformer,deep-ensemble-Gaussian(5seed),0.535,1.042,,
+bace_clean,chemfm,deep-ensemble-Gaussian(5seed),0.35,0.562,,
+bace_clean,chemprop,deep-ensemble-Gaussian(5seed),0.314,0.509,,
