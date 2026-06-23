@@ -41,19 +41,22 @@ def toc_overconfidence():
     y = np.arange(len(rows))
     ax.axvspan(0.90, 1.0, color="#2E8B57", alpha=0.08)
     ax.axvline(0.90, color=GREY, ls="--", lw=1.2)
-    ax.text(0.905, len(rows) - 0.4, "nominal 0.90", fontsize=8.5, color="#444", rotation=90, va="top")
+    ax.text(0.90, len(rows) - 0.2, "nominal 0.90", fontsize=8, color="#444", ha="center", va="bottom")
+    conf_labeled = False
     for i, (lab, nat, conf) in enumerate(rows):
         if conf is not None:
             ax.plot([nat, conf], [i, i], color=GREY, lw=1.2, zorder=1)
-            ax.scatter(conf, i, s=70, color=BLUE, zorder=3, label="split conformal" if i == 0 else None)
+            ax.scatter(conf, i, s=70, color=BLUE, zorder=3, label=None if conf_labeled else "split conformal")
+            conf_labeled = True
         ax.scatter(nat, i, s=70, color=RED, marker="v", zorder=3,
                    label="native (MC-Dropout / deep ensemble)" if i == 0 else None)
         ax.text(nat - 0.015, i, f"{nat:.2f}", ha="right", va="center", fontsize=7.5, color=RED)
     ax.set_yticks(y); ax.set_yticklabels([r[0] for r in rows], fontsize=8.5)
-    ax.set_xlim(0.18, 1.0); ax.set_xlabel("Empirical coverage at nominal 0.90  (higher = more honest)")
+    ax.set_xlim(0.18, 1.0); ax.set_ylim(-0.6, len(rows) + 0.25)
+    ax.set_xlabel("Empirical coverage at nominal 0.90  (higher = more honest)")
     ax.set_title("Native model confidence is overconfident;\nsplit conformal restores valid coverage", fontsize=11)
-    ax.legend(fontsize=8, loc="upper center", bbox_to_anchor=(0.5, -0.13), ncol=2, framealpha=0.9)
-    fig.tight_layout(); fig.savefig(FIG / "toc_graphic.png", dpi=300, bbox_inches="tight"); plt.close(fig)
+    ax.legend(fontsize=8, loc="upper center", bbox_to_anchor=(0.5, -0.16), ncol=2, framealpha=0.95)
+    fig.tight_layout(); fig.savefig(FIG / "toc_graphic.png", dpi=300, bbox_inches="tight", pad_inches=0.2); plt.close(fig)
     print(f"  -> {FIG / 'toc_graphic.png'}")
 
 
