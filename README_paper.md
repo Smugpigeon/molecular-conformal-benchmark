@@ -1,7 +1,7 @@
 # Conformal Uncertainty Quantification across Molecular Foundation Models
 
-> Public-repo README for the JCIM manuscript. At release, rename this file to `README.md`
-> in a clean checkout (the existing `README.md` is the course-project readme). **Not yet pushed.**
+> Public-repo README for the JCIM manuscript. In a clean public checkout, use this file as `README.md`
+> (the existing `README.md` is the course-project readme).
 
 Code and data for *"Conformal Uncertainty Quantification across Molecular Foundation Models for
 Small-Sample Regression"* (target: *J. Chem. Inf. Model.*).
@@ -94,4 +94,4 @@ Seeds are fixed (`src/utils/seed.py`, {42, 1337, 2024}); deep models report mean
 ## License
 
 Code: MIT (`LICENSE`). Included MoleculeNet CSVs follow their original licenses; derived result
-tables are released CC-BY-4.0. *(Confirm before release.)*
+tables are released CC-BY-4.0.
