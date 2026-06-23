@@ -94,3 +94,14 @@ report/_backup_*/
 
 # regenerable combined deliverable (rebuild via scripts/make_combined_report.py)
 report/课程实验报告_BACE_含附录.pdf
+
+# pre-submission: keep the JCIM manuscript out of the public repo (still built
+# locally and shown in the course-report appendix). Re-add after submission.
+paper/manuscript_jcim.tex
+paper/manuscript_jcim.pdf
+paper/manuscript_jcim_SI.tex
+paper/manuscript_jcim_SI.pdf
+paper/refs.bib
+paper/si_tables.tex
+paper/jcim_overleaf.zip
+paper/overleaf/
