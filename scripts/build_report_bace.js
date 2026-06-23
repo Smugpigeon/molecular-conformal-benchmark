@@ -118,6 +118,8 @@ push(table(["课程环节", "本项目对应内容"],
   [2200, 7160]));
 
 // 实验原理
+push(P("此外，本项目中跨分子基础模型的 conformal 预测区间评估已扩展为一篇面向《Journal of Chemical Information and Modeling》（JCIM, ACS）的英文论文，系统比较各分子基础模型预测区间的宽度与条件覆盖；其正文与补充材料作为附录 D 全文附于本报告之后。"));
+
 push(H1("实验原理"));
 push(H2("1. 任务与分子表征"));
 push(P("活性预测属回归任务，课程指标为平均绝对误差 MAE 与皮尔逊相关系数 Pearson R（辅以 RMSE、Spearman ρ）。机器学习不能直接读分子，须先把 SMILES 翻译成数值表征，课程给出两种策略：策略一“SMILES→编码器→机器学习”，策略二“SMILES→二维分子图→图神经网络”。"));
