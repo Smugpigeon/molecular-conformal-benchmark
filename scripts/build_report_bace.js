@@ -13,7 +13,7 @@ const FIG = "results/figures/";
 const ASSET = "assets/fudan/";
 const CW = 9360;
 const HEAD_FILL = "1F3864", ALT_FILL = "EEF3FA";
-const SONG = "Songti SC", HEI = "PingFang SC", KAI = "Kaiti SC", LATIN = "Times New Roman";
+const SONG = "Noto Serif CJK SC", HEI = "Noto Sans CJK SC", KAI = "Noto Serif CJK SC", LATIN = "Times New Roman";
 const F = (ea) => ({ ascii: LATIN, eastAsia: ea, hAnsi: LATIN, cs: LATIN });
 
 const P = (text, opts = {}) => new Paragraph({
