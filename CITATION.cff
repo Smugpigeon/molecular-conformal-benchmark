@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Conformal Uncertainty Quantification across Molecular Foundation Models for Small-Sample Regression"
+type: software
+authors:
+  - family-names: "Tang"
+    given-names: "Yufan"
+    orcid: "https://orcid.org/0009-0001-8158-8728"
+    affiliation: "College of Computer Science and Artificial Intelligence, Fudan University"
+license: MIT
+repository-code: "https://github.com/Smugpigeon/molecular-conformal-benchmark"
+doi: "10.5281/zenodo.20800762"

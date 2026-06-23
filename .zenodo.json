@@ -1,0 +1,14 @@
+{
+  "upload_type": "software",
+  "title": "Conformal Uncertainty Quantification across Molecular Foundation Models for Small-Sample Regression",
+  "description": "Code, configurations, results, figures, and the manuscript for a split-conformal prediction-interval-quality benchmark (coverage and width) across modern molecular foundation models (MolFormer-XL, ChemFM-3B, Uni-Mol, TabPFN) alongside traditional QSAR and a D-MPNN, on six small-sample regression datasets.",
+  "creators": [
+    {
+      "name": "Tang, Yufan",
+      "affiliation": "College of Computer Science and Artificial Intelligence, Fudan University",
+      "orcid": "0009-0001-8158-8728"
+    }
+  ],
+  "license": "MIT",
+  "access_right": "open"
+}
