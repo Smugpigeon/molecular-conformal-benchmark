@@ -115,7 +115,28 @@ function arrow(s, x, y, w) { s.addShape(pres.shapes.LINE, { x, y, w, h: 0, line:
   s.addNotes(`【~70s】先给结论，后面逐条证明。科学问题如上方框。在本数据集与评估协议下，零调参的 TabPFN 在三条轴上达到第一梯队——点预测误差最低 0.498、且与图网络 Chemprop、化学大模型 ChemFM 统计打平；在骨架严格划分的外推下几乎不退化、最鲁棒；不确定性区间在新化学上也最稳。同时我诚实交代一个否定结果：结构方法因对接位姿质量受限、没能补上配体模型的短板。这页是全场的地图。`);
 }
 
-// ===================================================== 3 STUDY DESIGN
+// ===================================================== 3 COURSE MAPPING
+{
+  const s = content("课程对应", "完整回应第五讲作业：数据整理 → 模型构建 → 训练评估 → 药物发现应用");
+  const hdr = (t) => ({ text: t, options: { bold: true, color: WHITE, fill: { color: NAVY } } });
+  const rows = [
+    [hdr("课程环节"), hdr("本项目对应内容")],
+    ["数据整理", "清洗漏斗 / 去重 / Murcko 骨架与泄漏审计"],
+    ["分子表征", "Morgan 指纹 + RDKit 物化描述符 + 多指纹消融"],
+    ["模型构建", "策略一 传统 ML（RF / GBM / SVR / Ridge）+ 基础模型（MolFormer / ChemFM / TabPFN）；策略二 Chemprop D-MPNN 图网络"],
+    ["训练与评估", "Optuna + 5 折 CV + 3 seed；MAE / Pearson R · ROC-AUC / MCC · 早期富集 EF"],
+    ["药物发现应用", "β-secretase 4D8C 分子对接（Vina）/ PBCNet2 / 活性悬崖分析"],
+    ["可复现性", "scaffold split · 泄漏审计 · 阴性对照 · 显著性检验 · conformal / AD 分层"],
+  ];
+  s.addTable(rows, { x: 0.6, y: 1.7, w: W - 1.25, colW: [2.4, W - 1.25 - 2.4],
+    fontFace: SERIF, fontSize: 13.5, color: INK, valign: "middle",
+    border: { type: "solid", color: HAIR, pt: 0.5 }, rowH: 0.6 });
+  s.addText("口径：MoleculeNet / DeepChem 作业（BACE / SMILES / 1513 / 回归 / MAE + Pearson R）；实现以 RDKit + scikit-learn / Chemprop / HuggingFace Transformers 复现同一数据任务。",
+    { x: 0.6, y: 6.42, w: W - 1.25, h: 0.5, fontFace: SERIF, fontSize: 12.5, color: MUTE, margin: 0 });
+  s.addNotes("【~40s】先给老师一张课程对应表：这门课要求选一个 AI 药物设计预测任务，做数据整理、模型构建、训练和分析——这张表逐条对上。数据整理是清洗加泄漏审计；表征是 Morgan 加 RDKit 描述符并做了多指纹消融；模型覆盖课程两种策略（指纹→ML、图→GNN）再加表格基础模型；评估以 MAE 和 Pearson R 为主，辅以分类和早期富集；最后落到 BACE 对接的药物发现语境。口径上跟随第五讲的 MoleculeNet / DeepChem 作业。");
+}
+
+// ===================================================== 4 STUDY DESIGN
 {
   const s = content("研究设计", "研究设计：一个任务、八个模型、三轴评估 + 结构与审计");
   box(s, 0.6, 1.85, 1.95, 1.0, "BACE", "1513 → 清洗 1504", WHITE, FN);
