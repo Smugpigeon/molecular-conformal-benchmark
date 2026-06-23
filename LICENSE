@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2026 The Authors  [TODO: finalize author/copyright holder before public release]
+Copyright (c) 2026 Yufan Tang
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,5 +22,4 @@ SOFTWARE.
 
 ---
 Note: The included MoleculeNet dataset CSVs (data/) retain their original upstream licenses.
-Derived result tables and figures (results/) are released under CC-BY-4.0. Confirm both before
-the public release.
+Derived result tables and figures (results/) are released under CC-BY-4.0.

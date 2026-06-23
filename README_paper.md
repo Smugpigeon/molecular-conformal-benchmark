@@ -20,7 +20,7 @@ degrades out of the applicability domain.
 |---|---|
 | Per-fold 8-model significance (TabPFN first; Friedman p≈8e-38) | `results/final/perfold_8model_*.csv`, `results/figures/cd_perfold_8model.png` |
 | Tightest-is-not-valid conformal width/coverage (6 datasets) | `results/final/conformal_full.csv`, `results/figures/conformal_multiseed.png` |
-| Native UQ overconfident vs conformal (MC-Dropout 0.28–0.64) | `results/final/{uq_extra,mc_dropout_deep,uq_baselines}.csv`, `results/figures/toc_graphic.png` |
+| Native UQ overconfident vs conformal (MC-Dropout 0.28–0.62) | `results/final/{uq_extra,mc_dropout_deep,uq_baselines}.csv`, `results/figures/toc_graphic.png` |
 | Random-vs-scaffold exchangeability | `results/final/gap4_dual_split.csv` |
 | Cross-dataset Demšar CD | `results/figures/cd_crossdataset_{width,mae}.png` |
 
@@ -67,8 +67,10 @@ Seeds are fixed (`src/utils/seed.py`, {42, 1337, 2024}); deep models report mean
   fetched from the DeepChem/MoleculeNet S3 mirror and prepared by `scripts/prep_qm_datasets.py`
   (canonicalize + dedup + random 80/10/10 split).
 - Cleaning is reproducible from `data/` (raw) to `data/processed/`.
-- Trained-model checkpoints will be deposited on the Hugging Face Hub; a Zenodo archive DOI of this
-  repository will be minted at submission. *(URLs/DOI TODO before release.)*
+- This repository is archived on Zenodo: **DOI [10.5281/zenodo.20800762](https://doi.org/10.5281/zenodo.20800762)**.
+- Trained-model checkpoints are **not** required to reproduce the reported tables and figures: the
+  scripts regenerate them from the released result CSVs in `results/final/`. Full retraining of the
+  deep models from scratch requires GPU access.
 
 ## Reproducibility notes (honest)
 
@@ -80,14 +82,14 @@ Seeds are fixed (`src/utils/seed.py`, {42, 1337, 2024}); deep models report mean
 - **Scope**: not every model is on every dataset for every analysis (TabPFN is out of regime on the
   large QM sets; Uni-Mol is not in the BACE per-fold omnibus) — stated in the paper.
 
-## Release checklist (before making public)
+## Release checklist
 
-- [ ] Finalize author list, ORCIDs, corresponding author, contributions.
-- [ ] Fill checkpoint (HF) + archive (Zenodo) URLs in `paper/` and above.
-- [ ] Verify reference volume/article numbers (`paper/refs.bib`).
-- [ ] Confirm license and data-redistribution terms.
-- [ ] Rename `README_paper.md` → `README.md` in the public checkout.
-- [ ] `git init`, review for personal paths/keys, then push.
+- [x] Author, ORCID, corresponding author, affiliation finalized.
+- [x] Zenodo archive DOI minted (`10.5281/zenodo.20800762`) and cited in the paper.
+- [x] License and data-redistribution terms set (MIT code; CC-BY-4.0 results; MoleculeNet upstream).
+- [x] Public repository pushed (personal paths/keys and internal docs excluded).
+- [ ] Verify reference volume/article numbers (`paper/refs.bib`) at proof (`chen2026` is ASAP).
+- [ ] In the public checkout, use `README_paper.md` as `README.md`.
 
 ## License
 
