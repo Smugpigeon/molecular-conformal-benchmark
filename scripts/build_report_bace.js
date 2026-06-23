@@ -131,7 +131,7 @@ push(P("Conformal 预测在验证集上校准，给出名义覆盖（如 90%）�
 push(H1("实验材料与工具"));
 push(B("数据：", "课程提供的 BACE 数据集（1513 个 β-secretase 抑制剂，含 pIC50 与预定义训练/验证/测试划分）；公开蛋白结构 PDB 4D8C（β-secretase 与共晶配体 BXD）用于对接，未引入任何外部化合物库。"));
 push(B("软件：", "RDKit 2024.03（SMILES 标准化、Morgan 指纹、描述符、Murcko 骨架、活性悬崖）；scikit-learn（经典模型）、Optuna（贝叶斯调参）、TabPFN 2.0（表格基础模型）、Chemprop v2、HuggingFace Transformers + PEFT（MolFormer/ChemFM）、AutoDock Vina + Meeko（对接）、PBCNet2.0（结构-成对，作者公开 MIT 仓库）；统计用 scipy。"));
-push(B("硬件：", "8 × NVIDIA RTX 5880 Ada（48 GB）服务器，conda 环境统一管理；随机性由 set_all_seeds 锁定。"));
+push(B("硬件：", "8 × NVIDIA A100（80 GB）服务器，conda 环境统一管理；随机性由 set_all_seeds 锁定。"));
 
 // 实验步骤
 push(H1("实验步骤"));

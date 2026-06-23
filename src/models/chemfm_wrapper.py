@@ -78,7 +78,7 @@ class ChemFMRegressor(nn.Module):
         super().__init__()
         # Trigger: 3B-param model in fp32 = 12GB weights + 24GB optim states.
         # Why:     bf16 keeps weights in 6GB; LoRA keeps optim tiny.
-        # Outcome: full fine-tune fits in <24GB on a 48GB card.
+        # Outcome: full fine-tune fits in <24GB on an 80GB A100 card.
         self.backbone = AutoModelForCausalLM.from_pretrained(
             backbone_id,
             torch_dtype=torch.bfloat16,
