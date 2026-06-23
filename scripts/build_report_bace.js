@@ -278,7 +278,7 @@ push(table(["模型", "MAE", "RMSE", "Pearson R", "Spearman ρ"],
    ["SVR", "0.599", "0.793", "0.815", "0.797"],
    ["MolFormer-XL", "0.673±0.054", "0.885±0.057", "0.775±0.035", "0.733±0.034"]],
   [2160, 1800, 1800, 1800, 1800]));
-push(B("C. 数据与代码可用性：", "本研究使用课程提供的 BACE 数据集与公开蛋白结构 PDB 4D8C；建模、调参、误差解剖、对接、PBCNet2、conformal 与审计脚本及结果表存于项目仓库，经统一入口一键复跑；PBCNet2 代码与权重来自作者公开 MIT 仓库。"));
+push(B("C. 数据与代码可用性：", "本研究使用课程提供的 BACE 数据集与公开蛋白结构 PDB 4D8C；建模、调参、误差解剖、对接、PBCNet2、conformal 与审计脚本及结果表存于项目仓库（GitHub：https://github.com/Smugpigeon/molecular-conformal-benchmark；Zenodo 存档：https://doi.org/10.5281/zenodo.20800762），经统一入口一键复跑；PBCNet2 代码与权重来自作者公开 MIT 仓库。"));
 push(B("D. 配套 JCIM 投稿论文（全文附后）：", "本项目中跨分子基础模型的 conformal 预测区间评估已扩展为一篇面向《Journal of Chemical Information and Modeling》（JCIM, ACS）的英文论文，题为 “Conformal Uncertainty Quantification across Molecular Foundation Models for Small-Sample Regression”，在固定有效覆盖率下系统比较各分子基础模型预测区间的宽度与条件覆盖。该论文正文与补充材料（Supporting Information）作为本报告附录全文附于其后，保留其英文 ACS 双栏排版与独立页码。"));
 
 const doc = new Document({
