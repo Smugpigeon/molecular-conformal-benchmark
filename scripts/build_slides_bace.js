@@ -27,7 +27,7 @@ let pageNo = 0;
 function runhead(s, section) {
   s.addShape(pres.shapes.RECTANGLE, { x: 0, y: 0, w: 0.22, h: H, fill: { color: FN }, line: { color: FN } });
   s.addImage({ path: LOGO, x: W - 2.02, y: 0.26, w: 1.62, h: 0.55 });
-  s.addText("AI 赋能药物设计发现前沿" + (section ? "　·　" + section : ""), { x: 0.5, y: 0.34, w: 8.3, h: 0.3, fontFace: SERIF, fontSize: 11.5, color: MUTE, margin: 0 });
+  s.addText("AI 赋能药物发现前沿" + (section ? "　·　" + section : ""), { x: 0.5, y: 0.34, w: 8.3, h: 0.3, fontFace: SERIF, fontSize: 11.5, color: MUTE, margin: 0 });
   s.addShape(pres.shapes.LINE, { x: 0.5, y: 0.66, w: W - 2.75, h: 0, line: { color: HAIR, width: 1 } });
 }
 function foot(s) { pageNo++; s.addText(String(pageNo), { x: 0, y: H - 0.46, w: W, h: 0.3, fontFace: LATIN, fontSize: 11.5, color: MUTE, align: "center", margin: 0 }); }
@@ -85,7 +85,7 @@ function arrow(s, x, y, w) { s.addShape(pres.shapes.LINE, { x, y, w, h: 0, line:
   s.addText("Tabular Foundation Models vs Classical QSAR and Molecular Foundation Models on Small-Sample BACE-1",
     { x: 1.4, y: 3.72, w: W - 1.8, h: 0.4, fontFace: LATIN, fontSize: 13, italic: true, color: MUTE, align: "center", margin: 0 });
   s.addShape(pres.shapes.LINE, { x: 4.2, y: 4.4, w: W - 8.4, h: 0, line: { color: HAIR, width: 1 } });
-  s.addText("复旦大学药学院《AI 赋能药物设计发现前沿》期末实验报告 · 课堂汇报", { x: 1.4, y: 4.6, w: W - 4.2, h: 0.34, fontFace: SERIF, fontSize: 14, color: INK, align: "center", margin: 0 });
+  s.addText("复旦大学《AI 赋能药物发现前沿》期末实验报告 · 课堂汇报", { x: 1.4, y: 4.6, w: W - 4.2, h: 0.34, fontFace: SERIF, fontSize: 14, color: INK, align: "center", margin: 0 });
   s.addText("汇报人：汤雨凡（学号 23307130372）", { x: 1.4, y: 5.05, w: W - 4.2, h: 0.34, fontFace: SERIF, fontSize: 15.5, bold: true, color: FN, align: "center", margin: 0 });
   s.addText("授课教师：戚逸飞 · 王任小 · 李嫣        2026 年 6 月", { x: 1.4, y: 5.55, w: W - 4.2, h: 0.34, fontFace: SERIF, fontSize: 12.5, color: MUTE, align: "center", margin: 0 });
   s.addNotes(`【开场 ~30s】各位老师好，我是汤雨凡。本次汇报围绕一个科学问题：在小样本 BACE 这类 QSAR 任务上，新兴的"表格基础模型"能否在点预测、外推泛化、不确定性可信度这三条轴上，达到或超过传统 QSAR 与分子基础模型。下面用约十五分钟给出三条主证据，再补充表征、可解释性与多评估轴三项课程方法学深化，并诚实交代限制。`);

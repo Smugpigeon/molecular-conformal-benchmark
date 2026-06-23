@@ -88,7 +88,7 @@ const cover = [
     rows: [
       infoRow([{ t: "课程名称：", b: true, w: 1900, fill: ALT_FILL }, { t: "AI 赋能药物发现前沿", b: false, w: 6300 }].map((c, i) => i === 0 ? c : { ...c, w: 6300 })),
       infoRow([{ t: "姓　　名：", b: true, w: 1900, fill: ALT_FILL }, { t: "汤雨凡", b: false, w: 2300 }, { t: "学　　号：", b: true, w: 1700, fill: ALT_FILL }, { t: "23307130372", b: false, w: 2300 }]),
-      infoRow([{ t: "学　　院：", b: true, w: 1900, fill: ALT_FILL }, { t: "药学院", b: false, w: 2300 }, { t: "专　　业：", b: true, w: 1700, fill: ALT_FILL }, { t: "药学", b: false, w: 2300 }]),
+      infoRow([{ t: "学　　院：", b: true, w: 1900, fill: ALT_FILL }, { t: "计算与智能创新学院", b: false, w: 2800 }, { t: "专　　业：", b: true, w: 1400, fill: ALT_FILL }, { t: "计算机科学与技术", b: false, w: 2100 }]),
     ] }),
   new Paragraph({ alignment: AlignmentType.CENTER, spacing: { before: 600 }, children: [new TextRun({ text: "2026 年 6 月", size: 22, font: F(SONG) })] }),
   new Paragraph({ children: [new PageBreak()] }),
