@@ -87,7 +87,7 @@ function arrow(s, x, y, w) { s.addShape(pres.shapes.LINE, { x, y, w, h: 0, line:
   s.addShape(pres.shapes.LINE, { x: 4.2, y: 4.4, w: W - 8.4, h: 0, line: { color: HAIR, width: 1 } });
   s.addText("复旦大学《AI 赋能药物发现前沿》期末实验报告 · 课堂汇报", { x: 1.4, y: 4.6, w: W - 4.2, h: 0.34, fontFace: SERIF, fontSize: 14, color: INK, align: "center", margin: 0 });
   s.addText("汇报人：汤雨凡（学号 23307130372）", { x: 1.4, y: 5.05, w: W - 4.2, h: 0.34, fontFace: SERIF, fontSize: 15.5, bold: true, color: FN, align: "center", margin: 0 });
-  s.addText("授课教师：戚逸飞 · 王任小 · 李嫣        2026 年 6 月", { x: 1.4, y: 5.55, w: W - 4.2, h: 0.34, fontFace: SERIF, fontSize: 12.5, color: MUTE, align: "center", margin: 0 });
+  s.addText("2026 年 6 月", { x: 1.4, y: 5.55, w: W - 4.2, h: 0.34, fontFace: SERIF, fontSize: 12.5, color: MUTE, align: "center", margin: 0 });
   s.addNotes(`【开场 ~30s】各位老师好，我是汤雨凡。本次汇报围绕一个科学问题：在小样本 BACE 这类 QSAR 任务上，新兴的"表格基础模型"能否在点预测、外推泛化、不确定性可信度这三条轴上，达到或超过传统 QSAR 与分子基础模型。下面用约十五分钟给出三条主证据，再补充表征、可解释性与多评估轴三项课程方法学深化，并诚实交代限制。`);
 }
 
